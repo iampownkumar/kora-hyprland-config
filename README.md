@@ -3,7 +3,8 @@
 Personal Hyprland configuration used on **Arch Linux**.
 
 Maintained by **Pownkumar — Founder of Korelium**
-
+Create on	 : March 2 2026
+Last Update on   : May 3 2026
 ---
 
 ## Overview
@@ -155,7 +156,7 @@ and copied to clipboard automatically.
 
 Clone the repository:
 
-git clone https://github.com/iampownkumar/kora-hyprland-config
+git clone https://github.com/iampownkumar/hypr.git 
 
 Copy the configuration:
 
