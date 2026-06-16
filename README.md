@@ -6,7 +6,7 @@ My personal Hyprland config for Arch Linux. It's modular — each part of the se
 
 ## Why I made this
 
-Back in 2018, the Tamil Nadu Government gave out laptops to students. I got one — 8GB RAM on paper, but Windows was eating 4 to 4.5GB of that just sitting idle. The laptop was basically dead. I couldn't do anything properly on it.
+Back in 2017, the Tamil Nadu Government gave out laptops to students. I got one — 8GB RAM on paper, but Windows was eating 4 to 4.5GB of that just sitting idle. The laptop was basically dead. I couldn't do anything properly on it.
 
 That's when I decided I'm not living like this. I heard about Linux, and I thought — if Windows is killing my machine, let me try something else. So I did. I started exploring every distro I could find. Tried everything. Eventually landed on Arch, and stayed there.
 
