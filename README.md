@@ -1,184 +1,83 @@
-# Kora Hyprland Config
+# hypr
 
-Personal Hyprland configuration used on **Arch Linux**.
-
-Maintained by **Pownkumar — Founder of Korelium**
-Create on	 : March 2 2026
-Last Update on   : May 3 2026
----
-
-## Overview
-
-This repository contains a **modular Hyprland configuration** designed for a clean and keyboard-driven workflow.
-
-The configuration separates different components into dedicated files to improve maintainability and readability.
+My personal Hyprland config for Arch Linux. It's modular — each part of the setup lives in its own file so it's easier to tweak without breaking everything else.
 
 ---
 
-## Features
+## Why I made this
 
-- Modular Hyprland configuration
-- ALT used as the main modifier key (keyboard issue with Super key)
-- Workspace based navigation
-- VIM-style window movement (H J K L)
-- Screenshot workflow using `grim` and `slurp`
-- Volume and brightness keybindings
-- Waybar status bar integration
+Back in 2018, the Tamil Nadu Government gave out laptops to students. I got one — 8GB RAM on paper, but Windows was eating 4 to 4.5GB of that just sitting idle. The laptop was basically dead. I couldn't do anything properly on it.
 
----
+That's when I decided I'm not living like this. I heard about Linux, and I thought — if Windows is killing my machine, let me try something else. So I did. I started exploring every distro I could find. Tried everything. Eventually landed on Arch, and stayed there.
 
-## Configuration Structure
+For years I ran KDE Plasma. It was great. But honestly I got too comfortable, and for me that's a sign to move on. I like problems. I like figuring things out. When things just work without me having to think, I get bored.
 
-hypr/
+That's when I found Hyprland. People were talking about it. I tried it. It was actually worth it — smooth, fast, completely in my control.
 
-* hyprland.conf
-* variables.conf
-* monitors.conf
-* input.conf
-* appearance.conf
-* keybinds.conf
-* autostart.conf
+This config is mine. It's what runs on my machine right now. The ALT key as the main modifier is there because my Super key broke and I just worked around it. Nothing fancy, nothing polished for the internet. I'm keeping it here for myself mostly, and if someone finds it useful, that's a bonus.
 
 ---
 
-## Key Design Choices
-
-### ALT as Main Modifier
-
-The system uses **ALT as `$mainMod`** because the keyboard Super key is currently faulty.
-
-```ini
-$mainMod = ALT
-```
-
-This can easily be changed later in `variables.conf`.
-
----
-
-### Modular Configuration
-
-Instead of a single large config file, the setup uses multiple focused configuration files:
+## What's in here
 
 ```
 hypr/
-├── hyprland.conf
-├── variables.conf
-├── monitors.conf
-├── input.conf
-├── appearance.conf
-├── keybinds.conf
-└── autostart.conf
+├── hyprland.conf      # Main entry point, sources everything else
+├── variables.conf     # Key definitions (mainMod, colors, etc.)
+├── monitors.conf      # Monitor layout
+├── input.conf         # Mouse, keyboard, touchpad settings
+├── appearance.conf    # Gaps, borders, blur, rounding
+├── keybinds.conf      # All keyboard shortcuts
+└── autostart.conf     # Apps that launch on login
 ```
 
-This makes the configuration easier to debug and maintain.
+---
+
+## Why ALT instead of Super
+
+The Super key on my keyboard broke. So `$mainMod = ALT` in `variables.conf`. If your Super key works fine, just change it there.
+
+---
+
+## What it supports
+
+- Workspace-based navigation
+- Vim-style window movement (H/J/K/L)
+- Screenshots with `grim` and `slurp` (saved to `~/Pictures/`, auto-copied to clipboard)
+- Volume and brightness keys
+- Waybar at the top
 
 ---
 
 ## Dependencies
 
-Typical packages used with this setup:
-
-```
-hyprland
-waybar
-wofi
-dunst
-grim
-slurp
-wl-clipboard
-brightnessctl
-pipewire
-playerctl
-nm-applet
-blueman
-hyprlock
-```
-
----
-
-## Quick Setup (Arch Linux)
-
-If you're on **Arch Linux** and just want to get things running quickly, copy and paste this command in your terminal:
+Install these on Arch:
 
 ```bash
-sudo pacman -S hyprland waybar wofi dunst grim slurp wl-clipboard brightnessctl playerctl network-manager-applet blueman hyprlock kitty dolphin konsole
+sudo pacman -S hyprland waybar wofi dunst grim slurp wl-clipboard \
+  brightnessctl playerctl network-manager-applet blueman hyprlock \
+  kitty dolphin
 ```
-
-Grab a coffee ☕ while pacman does its thing.
-
-This installs everything needed for the core experience:
-
-* **Hyprland** → Window manager
-* **Waybar** → Top status bar
-* **Wofi** → Application launcher
-* **Dunst** → Notifications
-* **Grim + Slurp** → Screenshots
-* **wl-clipboard** → Clipboard support
-* **Brightnessctl** → Brightness controls
-* **Playerctl** → Media controls
-* **Network Manager Applet** → Wi-Fi manager
-* **Blueman** → Bluetooth manager
-* **Hyprlock** → Screen lock
-* **Kitty / Konsole** → Terminal options
-* **Dolphin** → File manager
-
-After installation, clone the config and you're ready to go 🚀
-
 
 ---
 
+## Setup
 
-## Screenshot Workflow
-
-Full Screenshot:
-
-```
-Print
-```
-
-Area Screenshot:
-
-```
-Shift + Print
-```
-
-Screenshots are saved to:
-
-```
-~/Pictures/
-```
-
-and copied to clipboard automatically.
-
----
-
-## Installation
-
-Clone the repository:
-
-git clone https://github.com/iampownkumar/hypr.git 
-
-Copy the configuration:
-
-cp -r kora-hyprland-config/* ~/.config/hypr/
-
-Reload Hyprland:
-
+```bash
+git clone https://github.com/korelium-oss/hypr.git
+cp -r hypr ~/.config/
 hyprctl reload
-
-Then link it to your Hyprland config directory.
-
----
-
-## Philosophy
-
-The goal of this configuration is to keep the system:
-
-- minimal
-- modular
-- keyboard-driven
-- easy to maintain
+```
 
 ---
 
-Arch Linux • Hyprland • Wayland
+## Screenshot shortcuts
+
+| Print | Full screenshot |
+| Shift + Print | Area screenshot (drag to select) |
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
